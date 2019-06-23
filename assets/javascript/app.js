@@ -1,4 +1,5 @@
 var topics = ["Ryan Gosling", "Keanu Reeves", "Jennifer Aniston", "Brad Pitt"];
+var gifCount = 0;
 
 //display buttons
 function displayButtons() {
@@ -12,12 +13,18 @@ function displayButtons() {
 
 //display gif images to page
 $(document.body).on("click", "button", function() {
-  //clear all gifs first!
-  $("#gif-appear-here").empty();
-
   var myAPIKey = "5F5rFtQgjLKdiiUfI8X8zInqhKd0Aztw";
   var actor = $(this).text();
   console.log(actor);
+
+  //check if user click the same button as before
+  if (actor === $("#gif-appear-here").attr("data-actor")) {
+    gifCount = gifCount + 5;
+  } else {
+    //if not, clear all gifs first!
+    $("#gif-appear-here").empty();
+    console.log("gifs have been cleared!");
+  }
 
   // constructing a URL to search Giphy
   var queryURL =
@@ -26,7 +33,7 @@ $(document.body).on("click", "button", function() {
     "&api_key=" +
     myAPIKey +
     "&limit=" +
-    10;
+    50;
 
   // performing our AJAX GET request
   $.ajax({
@@ -37,20 +44,14 @@ $(document.body).on("click", "button", function() {
     var result = response.data;
     console.log(result);
 
+    console.log(gifCount);
+
     //loop through array to get a result item
-    for (var j = 0; j < result.length; j++) {
+    for (var j = gifCount; j < gifCount + 5; j++) {
       console.log(result[j]);
       //runs only if the rating is appropriate
       if (result[j].rating !== "r" && result[j].rating !== "pg-13") {
         var newDiv = $("<div id='newDiv'>");
-        //set title
-        var gifTitle = $("<p class='gifTitle'>").text(result[j].title);
-        newDiv.append(gifTitle);
-
-        //set rating
-        var gifRating = $("<p>").text("Rating: " + result[j].rating);
-        newDiv.append(gifRating);
-
         //set image
         var gifImage = $("<img>")
           .attr("src", result[j].images.fixed_height_still.url)
@@ -58,9 +59,20 @@ $(document.body).on("click", "button", function() {
           .attr("data-still", result[j].images.fixed_height_still.url)
           .attr("data-state", "still");
         newDiv.append(gifImage);
+
+        //set rating
+        var gifRating = $("<p>").text("Rating: " + result[j].rating);
+        newDiv.prepend(gifRating);
+
+        //set title
+        var gifTitle = $("<p class='gifTitle'>").text(result[j].title);
+        newDiv.prepend(gifTitle);
       }
       //display rating and image
-      $("#gif-appear-here").append(newDiv);
+      $("#gif-appear-here").prepend(newDiv);
+
+      // add data-actor of the button clicked!
+      $("#gif-appear-here").attr("data-actor", actor);
     }
   });
 });
