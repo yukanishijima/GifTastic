@@ -43,6 +43,10 @@ $(document.body).on("click", "button", function() {
       //runs only if the rating is appropriate
       if (result[j].rating !== "r" && result[j].rating !== "pg-13") {
         var newDiv = $("<div id='newDiv'>");
+        //set title
+        var gifTitle = $("<p class='gifTitle'>").text(result[j].title);
+        newDiv.append(gifTitle);
+
         //set rating
         var gifRating = $("<p>").text("Rating: " + result[j].rating);
         newDiv.append(gifRating);
