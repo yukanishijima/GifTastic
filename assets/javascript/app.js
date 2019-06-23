@@ -63,7 +63,9 @@ $(document.body).on("click", "button", function() {
 
 //animate the gif when clicked
 $(document.body).on("click", "img", function() {
-  var state = $("img").attr("data-state");
+  //get data state
+  var state = $(this).attr("data-state");
+
   if (state === "still") {
     $(this).attr("src", $(this).attr("data-animate"));
     $(this).attr("data-state", "animate");
