@@ -12,6 +12,9 @@ function displayButtons() {
 
 //display gif images to page
 $(document.body).on("click", "button", function() {
+  //clear all gifs first!
+  $("#gif-appear-here").empty();
+
   var myAPIKey = "5F5rFtQgjLKdiiUfI8X8zInqhKd0Aztw";
   var actor = $(this).text();
   console.log(actor);
@@ -42,7 +45,7 @@ $(document.body).on("click", "button", function() {
         var newDiv = $("<div id='newDiv'>");
         //set rating
         var gifRating = $("<p>").text("Rating: " + result[j].rating);
-        $("#newDiv").html(gifRating);
+        newDiv.append(gifRating);
 
         //set image
         var gifImage = $("<img>")
@@ -50,11 +53,11 @@ $(document.body).on("click", "button", function() {
           .attr("data-animate", result[j].images.fixed_height.url)
           .attr("data-still", result[j].images.fixed_height_still.url)
           .attr("data-state", "still");
-        $("#newDiv").append(gifImage);
+        newDiv.append(gifImage);
       }
+      //display rating and image
+      $("#gif-appear-here").append(newDiv);
     }
-    //display rating and image
-    $("#gif-appear-here").append(newDiv);
   });
 });
 
