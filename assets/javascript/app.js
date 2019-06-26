@@ -84,6 +84,11 @@ $(document.body).on("click", "button", function () {
   });
 });
 
+//delete the load more button once clicked!
+$(document.body).on("click", "#loadMore", function () {
+  $("#loadMore").remove();
+});
+
 //animate the gif when clicked
 $(document.body).on("click", "img", function () {
   //get data state
