@@ -1,4 +1,4 @@
-var topics = ["Johnny Depp", "Leonardo DiCaprio", "Ryan Reynolds", "Jennifer Aniston", "Brad Pitt", "Rachel McAdams", "Ellen Page"];
+var topics = ["Ryan Gosling", "Leonardo DiCaprio", "Ryan Reynolds", "Jennifer Aniston", "Brad Pitt", "Johnny Depp", "Rachel McAdams"];
 var gifCount = 0;
 
 //display buttons
@@ -14,10 +14,10 @@ function displayButtons() {
 //display gif images to page
 $(document.body).on("click", "button", function () {
   var myAPIKey = "5F5rFtQgjLKdiiUfI8X8zInqhKd0Aztw";
-  var actor = $(this).attr("data-name");
+  var actor = $(this).attr("data-name").toUpperCase();
   console.log(actor);
 
-  //check if user click the same button as before
+  // check if user click the same button as before
   if (actor === $("#gif-appear-here").attr("data-actor")) {
     gifCount = gifCount + 5;
   } else {
@@ -76,10 +76,8 @@ $(document.body).on("click", "button", function () {
     }
 
     //add load more button at the end of gifs
-    var loadMoreDiv = $("<div id='loadMoreDiv>");
-    $("#loadMoreDiv").empty();
-    var loadMore = $("<button id='loadMore'>Load more</button>").attr("data-name", actor);
-    loadMoreDiv.append(loadMore);
+    $("#loadMore").remove();
+    var loadMore = $("<button id='loadMore'>Load more giphy!</button>").attr("data-name", actor);
     $("#gif-appear-here").append(loadMore);
   });
 });
@@ -117,4 +115,24 @@ $("#submit").on("click", function (event) {
 
 $("document").ready(function () {
   displayButtons();
+});
+
+
+//go up button function
+var pagetop = $('#page-top');
+pagetop.hide();
+$(window).scroll(function () {
+  //when scrolled more than 300px
+  if ($(this).scrollTop() > 300) {
+    pagetop.fadeIn();
+  } else {
+    pagetop.fadeOut();
+  }
+});
+pagetop.click(function () {
+  //go up to the top in 0.5sec
+  $('body,html').animate({
+    scrollTop: 0
+  }, 500);
+  return false;
 });

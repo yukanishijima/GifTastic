@@ -120,7 +120,7 @@ body {
 }
 body {
     text-align: center;
-    background-color:  rgb(234, 223, 203);
+    background-color:  rgba(245, 240, 225, 1);
 }
 header {
     margin: 20px auto;
@@ -187,7 +187,7 @@ h2:after {
 button {
     border: none;
     background: rgb(154, 208, 212);
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 6px 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -226,8 +226,6 @@ form {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
 }
-
-
 /* gif
 --------------------------------------------- */
 #newDiv {
@@ -243,4 +241,39 @@ form {
 }
 #gif-appear-here {
     margin: 40px 0;
+}
+#loadMore {
+    font-size: 15px;
+    padding: 10px 16px;
+    /* font-family:  'Lobster', cursive; */
+}
+
+/* go up button
+--------------------------------------------- */
+#page-top{
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 0;
+  bottom: 40px;
+  background: rgba(219, 104, 104, 0.6);
+  border-radius: 50%;
+}
+#page-top a{
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+}
+.fa-arrow-up {
+  font-weight: 900;
+  font-size: 20px;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
