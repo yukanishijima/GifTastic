@@ -184,6 +184,63 @@ h2:after {
 
 /* button 
 --------------------------------------------- */
+button {
+    border: none;
+    background: rgb(154, 208, 212);
+    border-radius: 10px;
+    padding: 6px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+    margin: 3px;
+
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}
+form {
+    max-width:300px;	
+    margin: 20px auto;
+}
+#user-input {
+    height:50px;
+    width: 200px;
+    border-radius:25px;
+    background:white;
+    border: none;
+    position: relative;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    padding: 10px;
+}
+ #submit {
+    height:50px;
+    width:50px;	
+    background:rgba(75, 130, 155, 1);
+    color:white;
+    border:none;
+    border-radius:0 25px 25px 0;
+    position:absolute; 
+    right: 50px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
 
 /* gif
 --------------------------------------------- */
+#newDiv {
+    margin: 20px auto;
+    width: 320px;
+}
+#newDiv img {
+    max-width: 310px;
+    position: relative;
+}
+#newDiv img:hover{
+    opacity: 0.7;
+}
+#gif-appear-here {
+    margin: 40px 0;
+}

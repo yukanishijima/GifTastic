@@ -1,4 +1,4 @@
-var topics = ["Ryan Gosling", "Keanu Reeves", "Jennifer Aniston", "Brad Pitt"];
+var topics = ["Johnny Depp", "Leonardo DiCaprio", "Ryan Reynolds", "Jennifer Aniston", "Brad Pitt", "Rachel McAdams", "Ellen Page"];
 var gifCount = 0;
 
 //display buttons
@@ -6,7 +6,7 @@ function displayButtons() {
   //delete buttons before adding new buttons
   $("#button-appear-here").empty();
   for (var i = 0; i < topics.length; i++) {
-    var buttons = $("<button>" + topics[i] + "</button>");
+    var buttons = $("<button>" + topics[i] + "</button>").attr("data-name", topics[i]);
     $("#button-appear-here").append(buttons);
   }
 }
@@ -14,7 +14,7 @@ function displayButtons() {
 //display gif images to page
 $(document.body).on("click", "button", function () {
   var myAPIKey = "5F5rFtQgjLKdiiUfI8X8zInqhKd0Aztw";
-  var actor = $(this).text();
+  var actor = $(this).attr("data-name");
   console.log(actor);
 
   //check if user click the same button as before
@@ -42,8 +42,8 @@ $(document.body).on("click", "button", function () {
   }).then(function (response) {
     //store results to array
     var result = response.data;
-    console.log(result);
 
+    console.log(result);
     console.log(gifCount);
 
     //loop through array to get a result item
@@ -60,16 +60,16 @@ $(document.body).on("click", "button", function () {
           .attr("data-state", "still");
         newDiv.append(gifImage);
 
-        //set rating
-        var gifRating = $("<p>").text("Rating: " + result[j].rating);
-        newDiv.prepend(gifRating);
-
         //set title
         var gifTitle = $("<p class='gifTitle'>").text(result[j].title);
-        newDiv.prepend(gifTitle);
+        newDiv.append(gifTitle);
+
+        //set rating
+        var gifRating = $("<p>").text("Rating: " + result[j].rating);
+        newDiv.append(gifRating);
       }
       //display rating and image
-      $("#gif-appear-here").prepend(newDiv);
+      $("#gif-appear-here").append(newDiv);
 
       // add data-actor of the button clicked!
       $("#gif-appear-here").attr("data-actor", actor);
