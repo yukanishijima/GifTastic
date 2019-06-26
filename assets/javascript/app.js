@@ -74,6 +74,13 @@ $(document.body).on("click", "button", function () {
       // add data-actor of the button clicked!
       $("#gif-appear-here").attr("data-actor", actor);
     }
+
+    //add load more button at the end of gifs
+    var loadMoreDiv = $("<div id='loadMoreDiv>");
+    $("#loadMoreDiv").empty();
+    var loadMore = $("<button id='loadMore'>Load more</button>").attr("data-name", actor);
+    loadMoreDiv.append(loadMore);
+    $("#gif-appear-here").append(loadMore);
   });
 });
 
