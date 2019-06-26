@@ -100,3 +100,90 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+/* global style 
+--------------------------------------------- */
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+body {
+    background-color: rgba(12, 81, 169, 0.24);
+}
+
+/* header
+--------------------------------------------- */
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+body {
+    text-align: center;
+    background-color:  rgb(234, 223, 203);
+}
+header {
+    margin: 20px auto;
+    padding: 10px 0;
+    width: 250px;
+    height: 220px;
+    border-radius: 100%;
+    background-color: rgb(219, 104, 104);
+    z-index: -2;
+    position: relative;
+}
+.header-wrap {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+}
+h1 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+h2 {
+    display: inline-block;
+    color: white;
+    font-family:  'Lobster', cursive;
+    font-size: 70px; 
+    line-height: 1.1em;
+    text-shadow: .03em .03em 0 rgb(219, 104, 104);
+}
+h2:after {
+    content: attr(data-shadow);
+    width: 100%;
+    height: 120%;
+    position: absolute;
+    top: 7%;
+    left: 2%;
+    z-index: -1;
+    text-shadow: none;
+    background-image:
+    linear-gradient(
+        45deg,
+        transparent 45%,
+        rgb(255, 255, 255) 45%,
+        rgb(255, 255, 255) 55%,
+        transparent 0
+        );
+    background-size: .08em .08em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: text-shadow 30s linear infinite;
+}
+
+@keyframes text-shadow {
+    0% {background-position: 0 0}
+    0% {background-position: 100% -100%}
+}
+
+
+
+/* button 
+--------------------------------------------- */
+
+/* gif
+--------------------------------------------- */

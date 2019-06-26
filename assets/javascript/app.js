@@ -12,7 +12,7 @@ function displayButtons() {
 }
 
 //display gif images to page
-$(document.body).on("click", "button", function() {
+$(document.body).on("click", "button", function () {
   var myAPIKey = "5F5rFtQgjLKdiiUfI8X8zInqhKd0Aztw";
   var actor = $(this).text();
   console.log(actor);
@@ -39,7 +39,7 @@ $(document.body).on("click", "button", function() {
   $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(function(response) {
+  }).then(function (response) {
     //store results to array
     var result = response.data;
     console.log(result);
@@ -78,7 +78,7 @@ $(document.body).on("click", "button", function() {
 });
 
 //animate the gif when clicked
-$(document.body).on("click", "img", function() {
+$(document.body).on("click", "img", function () {
   //get data state
   var state = $(this).attr("data-state");
 
@@ -92,7 +92,7 @@ $(document.body).on("click", "img", function() {
 });
 
 //create new buttons with a form!
-$("#submit").on("click", function(event) {
+$("#submit").on("click", function (event) {
   event.preventDefault();
   var userInput = $("#user-input")
     .val()
@@ -103,6 +103,6 @@ $("#submit").on("click", function(event) {
   $("#user-input").val("");
 });
 
-$("document").ready(function() {
+$("document").ready(function () {
   displayButtons();
 });
