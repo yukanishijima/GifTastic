@@ -196,11 +196,11 @@ button {
 }
 form {
     max-width:300px;	
-    margin: 20px auto;
+    margin: 30px auto;
 }
 #user-input {
     height:50px;
-    width: 200px;
+    width: 250px;
     border-radius:25px;
     background:white;
     border: none;
@@ -210,6 +210,12 @@ form {
     font-size: 12px;
     padding: 10px 65px 10px 15px;
 }
+::placeholder {
+    color: rgb(190, 190, 190);
+}
+input:focus::placeholder {
+    color: transparent;
+}
 #submit {
     height:50px;
     width:50px;	
@@ -218,7 +224,7 @@ form {
     border:none;
     border-radius:0 25px 25px 0;
     position:absolute; 
-    right: 50px;
+    right: 20px;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -259,7 +265,7 @@ form {
     border: 1px solid rgba(75, 130, 155, 1);
 }
 #gif-appear-here {
-    margin: 40px 0;
+    margin: 33px 0 40px;
 }
 #loadMore {
     font-size: 15px;
