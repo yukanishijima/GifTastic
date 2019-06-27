@@ -107,10 +107,6 @@ input, select {
     -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
-body {
-    background-color: rgba(12, 81, 169, 0.24);
-}
-
 /* header
 --------------------------------------------- */
 *, *:before, *:after {
@@ -121,12 +117,14 @@ body {
 body {
     text-align: center;
     background-color:  rgba(245, 240, 225, 1);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 header {
     margin: 20px auto;
-    padding: 10px 0;
-    width: 250px;
-    height: 220px;
+    width: 255px;
+    height: 255px;
     border-radius: 100%;
     background-color: rgb(219, 104, 104);
     z-index: -2;
@@ -181,7 +179,6 @@ h2:after {
 }
 
 
-
 /* button 
 --------------------------------------------- */
 button {
@@ -211,9 +208,9 @@ form {
 
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    padding: 10px;
+    padding: 10px 65px 10px 15px;
 }
- #submit {
+#submit {
     height:50px;
     width:50px;	
     background:rgba(75, 130, 155, 1);
@@ -225,6 +222,16 @@ form {
 
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
+}
+@media screen and (min-width: 600px) {
+    #button-appear-here {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    button {
+        font-size: 16px;
+        padding: 7px 15px;
+    }
 }
 /* gif
 --------------------------------------------- */
@@ -239,13 +246,36 @@ form {
 #newDiv img:hover{
     opacity: 0.7;
 }
+#newDiv p {
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(75, 130, 155, 1);
+    margin-top: 8px;
+}
+#newDiv p:last-child {
+    font-family: serif;
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(75, 130, 155, 1);
+}
 #gif-appear-here {
     margin: 40px 0;
 }
 #loadMore {
     font-size: 15px;
     padding: 10px 16px;
+    margin-bottom: 40px;
     /* font-family:  'Lobster', cursive; */
+}
+@media screen and (min-width: 600px) {
+    #gif-appear-here {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #newDiv {
+        margin: 10px;
+    }
 }
 
 /* go up button
@@ -254,7 +284,7 @@ form {
   width: 40px;
   height: 40px;
   position: fixed;
-  right: 0;
+  right: 20px;
   bottom: 40px;
   background: rgba(219, 104, 104, 0.6);
   border-radius: 50%;

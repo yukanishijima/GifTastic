@@ -33,7 +33,7 @@ $(document.body).on("click", "button", function () {
     "&api_key=" +
     myAPIKey +
     "&limit=" +
-    50;
+    70;
 
   // performing our AJAX GET request
   $.ajax({
@@ -50,7 +50,9 @@ $(document.body).on("click", "button", function () {
     for (var j = gifCount; j < gifCount + 5; j++) {
       console.log(result[j]);
       //runs only if the rating is appropriate
-      if (result[j].rating !== "r" && result[j].rating !== "pg-13") {
+      // if (result[j].rating !== "r" && result[j].rating !== "pg-13") {
+      if (result[j].rating !== "r") {
+
         var newDiv = $("<div id='newDiv'>");
         //set image
         var gifImage = $("<img>")
@@ -65,7 +67,7 @@ $(document.body).on("click", "button", function () {
         newDiv.append(gifTitle);
 
         //set rating
-        var gifRating = $("<p>").text("Rating: " + result[j].rating);
+        var gifRating = $("<p>").text(result[j].rating.toUpperCase());
         newDiv.append(gifRating);
       }
       //display rating and image
@@ -77,8 +79,8 @@ $(document.body).on("click", "button", function () {
 
     //add load more button at the end of gifs
     $("#loadMore").remove();
-    var loadMore = $("<button id='loadMore'>Load more giphy!</button>").attr("data-name", actor);
-    $("#gif-appear-here").append(loadMore);
+    var loadMore = $("<button id='loadMore'>Load more Giphy!</button>").attr("data-name", actor);
+    loadMore.insertAfter($("#gif-appear-here"));
   });
 });
 
@@ -122,8 +124,8 @@ $("document").ready(function () {
 var pagetop = $('#page-top');
 pagetop.hide();
 $(window).scroll(function () {
-  //when scrolled more than 300px
-  if ($(this).scrollTop() > 300) {
+  //when scrolled more than 400px
+  if ($(this).scrollTop() > 400) {
     pagetop.fadeIn();
   } else {
     pagetop.fadeOut();
