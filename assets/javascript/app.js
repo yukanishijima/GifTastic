@@ -106,13 +106,16 @@ $(document.body).on("click", "img", function () {
 //create new buttons with a form!
 $("#submit").on("click", function (event) {
   event.preventDefault();
-  var userInput = $("#user-input")
-    .val()
-    .trim();
-  topics.push(userInput);
-  displayButtons();
-  // delete the input after displaying the new button
-  $("#user-input").val("");
+  //runs only when there's a value
+  if (($("#user-input").val().length) !== 0) {
+    var userInput = $("#user-input")
+      .val()
+      .trim();
+    topics.push(userInput);
+    displayButtons();
+    // delete the input after displaying the new button
+    $("#user-input").val("");
+  }
 });
 
 $("document").ready(function () {
