@@ -229,6 +229,10 @@ input:focus::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
+input[type="submit"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
 @media screen and (min-width: 600px) {
     #button-appear-here {
         max-width: 600px;
