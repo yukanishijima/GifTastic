@@ -118,7 +118,7 @@ $("#submit").on("click", function (event) {
   }
 });
 
-$("document").ready(function () {
+$(document).ready(function () {
   displayButtons();
 });
 
