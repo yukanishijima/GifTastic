@@ -1,4 +1,4 @@
-# Hollywood Stars Giphy API
+# Hollywood Star Giphy API
 
 [Live](https://yukanishijima.github.io/giphy-API/)
 
@@ -8,7 +8,7 @@ Click a button to display gifs of Hollywood stars, or create your own gif genera
 
 - Upon loading the page, Hollywood star name buttons will be shown by looping through an array of the names. 
 
-- Once a user clicks on a button, the page will grab 5 static gifs from the GIPHY API and display them on the page.
+- Once a user clicks on a button, the page will grab 5 static gifs from the Giphy API and display them on the page.
 
 - When the static gif is clicked, it starts playing. When the animated gif is clicked, it stops playing. 
 
@@ -30,8 +30,8 @@ Click a button to display gifs of Hollywood stars, or create your own gif genera
 ```
 ## Notes
 
-- I included the load more button to show more gifs and go up button to go back to the page top for enhanced user experience. 
+- For enhanced user experience, I included the load more button to show more gifs and go up button to go back to the page top. 
 
-- I added animated text shadows to the title to match a giphy animation :) 
+- I added animated text shadows to the title to match giphy animations :) 
 
 - This is a part of weekly assignments from UofT Full Stack Web Development Bootcamp 2019.
