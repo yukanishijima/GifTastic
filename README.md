@@ -1,47 +1,37 @@
-## GifTastic
+# Hollywood Stars Giphy API
 
-[Live](https://yukanishijima.github.io/Giphy-API/)
+[Live](https://yukanishijima.github.io/giphy-API/)
 
-### Overview
+Click a button to display gifs of Hollywood stars, or create your own gif generating button to add a little fun to your boring day! 
 
-In this assignment, you'll use the GIPHY API to make a dynamic web page that populates with gifs of your choice. To finish this task, you must call the GIPHY API and use JavaScript and jQuery to change the HTML of your site.
+## Site Functionality and Features
 
-#### Before You Begin
+- Upon loading the page, Hollywood star name buttons will be shown by looping through an array of the names. 
 
-Hit the GIPHY API.  
+- Once a user clicks on a button, the page will grab 5 static gifs from the GIPHY API and display them on the page.
 
-Fool around with the GIPHY API. Giphy API.  
-Be sure to read about these GIPHY parameters (hint, hint):  
+- When the static gif is clicked, it starts playing. When the animated gif is clicked, it stops playing. 
 
-q
-limit
-rating
+- The page displays a rating and title of every gif, which is the data pulled from the Giphy API. 
 
-Like many APIs, GIPHY requires developers to use a key to access their API data. To use the GIPHY API, you'll need a GIPHY account (don't worry, it's free!) and then obtain an API Key by creating an app.  
-Make sure you switch the protocol in the query URL from http to https, or the app may not work properly when deployed to Github Pages.  
+- A user can enter his favourite Hollywood star’s name in the form, which generates a new button on the page. 
 
-Watch the demo video  
+- The game is fully responsive for mobile and laptop. 
 
-You should have a high-level understanding of how this assignment works before attempting to code it.  
+## Technologies & Resources
+```
+- jQuery 
+ - ajax 
+ - promise
+ - JSON
+- API
+- CSS3
+- HTML5
+```
+## Notes
 
-#### Instructions
+- I included the load more button to show more gifs and go up button to go back to the page top for enhanced user experience. 
 
-Before you can make any part of your site work, you need to create an array of strings, each one related to a topic that interests you. Save it to a variable called topics.  
+- I added animated text shadows to the title to match a giphy animation :) 
 
-We chose animals for our theme, but you can make a list to your own liking.  
-
-Your app should take the topics in this array and create buttons in your HTML.  
-
-Try using a loop that appends a button for each string in the array.  
-
-When the user clicks on a button, the page should grab 10 static, non-animated gif images from the GIPHY API and place them on the page.  
-When the user clicks one of the still GIPHY images, the gif should animate. If the user clicks the gif again, it should stop playing.  
-
-Under every gif, display its rating (PG, G, so on).  
-
-This data is provided by the GIPHY API.  
-Only once you get images displaying with button presses should you move on to the next step.  
-
-Add a form to your page that takes a value from a user input box and adds it to your topics array. Then make a function call that takes each topic in the array and remakes the buttons on the page.  
-Deploy your assignment to Github Pages. 
-Rejoice! You just made something really cool.  
+- This is a part of weekly assignments from UofT Full Stack Web Development Bootcamp 2019.
