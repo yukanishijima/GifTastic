@@ -2,6 +2,8 @@
 
 [Live](https://yukanishijima.github.io/giphy-API/)
 
+![gif](/assets/images/demo.gif)
+
 Click a button to display gifs of Hollywood stars, or create your own gif generating button to add a little fun to your boring day! 
 
 ## Site Functionality and Features
